@@ -11,4 +11,4 @@ spec:
   source: 
     path: examples/01-pod/manifest
     repoURL: "https://github.com/jyang49/argocd.git"
-    targetRevision: master
+    targetRevision: main
