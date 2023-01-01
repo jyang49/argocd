@@ -9,6 +9,8 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: examples/helm/02-simple/manifest
+    path: examples/helm/02-values/manifest
     repoURL: "https://github.com/jyang49/argocd.git"
     targetRevision: main
+    helm:
+      releaseName: my-release
