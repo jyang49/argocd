@@ -7,4 +7,5 @@ data:
   mom: {{ .Values.family.mom }}
   son: {{ .Values.family.son }}
   daughter: {{ .Values.family.daughter }}
+  family: love
 
