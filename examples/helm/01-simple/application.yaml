@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: example-01-pod
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: default
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: examples/helm/01-simple/manifest
+    repoURL: "https://github.com/jyang49/argocd.git"
+    targetRevision: main
