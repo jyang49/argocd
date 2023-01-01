@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: example-02-pod
+  name: basic-02-pod
   namespace: argocd
 spec: 
   destination: 
@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: examples/02-pod/manifest
+    path: examples/basic/02-pod/manifest
     repoURL: "https://github.com/jyang49/argocd.git"
     targetRevision: main
   syncPolicy:
