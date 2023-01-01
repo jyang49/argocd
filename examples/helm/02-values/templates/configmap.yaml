@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  dad: {{ .Values.family.dad }}
+  mom: {{ .Values.family.mom }}
+  son: {{ .Values.family.son }}
+  daughter: {{ .Values.family.daughter }}
+
