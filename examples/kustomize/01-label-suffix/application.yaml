@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: kustomize-01-label-suffix
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: default
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: examples/kustomize/01-label-suffix/manifest
+    repoURL: "https://github.com/jyang49/argocd.git"
+    targetRevision: main
