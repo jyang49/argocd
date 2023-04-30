@@ -13,4 +13,4 @@ spec:
     repoURL: "https://github.com/jyang49/argocd.git"
     targetRevision: main
     helm:
-      releaseName: my-release
+      releaseName: my-release2
