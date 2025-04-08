@@ -15,7 +15,7 @@ spec:
             namespace: echo-two
   template:
     metadata:
-      name: '{{.appName}}'
+      name: '{{appName}}'
       namespace: argocd # The Application resources themselves will be created in the Argo CD namespace
       labels:
         app-group: echo-apps
@@ -27,7 +27,7 @@ spec:
         path: examples/20_application_set # Path to the template manifests
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{.namespace}}'
+        namespace: '{{namespace}}'
       syncPolicy:
         automated:
           prune: true
