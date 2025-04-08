@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: echo-apps
+  namespace: argocd # Ensure Argo CD is installed in this namespace
+spec:
+  generators:
+    - list:
+        elements:
+          - appName: echo-app-one
+            message: "Hello from App One!"
+            namespace: echo-one
+          - appName: echo-app-two
+            message: "Greetings from App Two!"
+            namespace: echo-two
+  template:
+    metadata:
+      name: '{{.appName}}'
+      namespace: argocd # The Application resources themselves will be created in the Argo CD namespace
+      labels:
+        app-group: echo-apps
+    spec:
+      project: default # Replace with your Argo CD project if needed
+      source:
+        repoURL: https://github.com/jyang49/argocd1.git
+        targetRevision: HEAD
+        path: manifests/echo-template # Path to the template manifests
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{.namespace}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
