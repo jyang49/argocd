@@ -24,7 +24,7 @@ spec:
       source:
         repoURL: https://github.com/jyang49/argocd1.git
         targetRevision: HEAD
-        path: manifests/echo-template # Path to the template manifests
+        path: examples/20_application_set # Path to the template manifests
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.namespace}}'
